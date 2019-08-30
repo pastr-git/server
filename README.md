@@ -17,8 +17,8 @@ Fetches one paste by ID.
  
 > `{BASE}/paste/dummy`
 
-Expected status code: `200`
-Expected Content Type: `application/json; charset=utf-8`
+Expected status code: `200`  
+Expected Content Type: `application/json; charset=utf-8`  
 Expected output:
 ```json
 {
@@ -34,8 +34,8 @@ Fetches the raw content of one paste by ID.
  
 > `{BASE}/paste/dummy/raw`
 
-Expected status code: `200`
-Expected Content Type: `text/plain; charset=utf-8`
+Expected status code: `200`  
+Expected Content Type: `text/plain; charset=utf-8`  
 Expected output:
 ```
 This is a dummy response used for testing.
@@ -46,8 +46,8 @@ Creates a new post.
  
 > `{BASE}/paste/dummy`
 
-Expected status code: `200`
-Expected Content Type: `application/json; charset=utf-8`
+Expected status code: `200`  
+Expected Content Type: `application/json; charset=utf-8`  
 Expected output:
 ```json
 {
