@@ -1,2 +1,1 @@
-# server
-Pastr ASP.Net Core backend
+# Pastr Server - ASPNet Core

@@ -1,0 +1,27 @@
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: mcr.microsoft.com/dotnet/core/sdk:2.1
+
+    working_directory: ~/UserR00T/Pastr-server
+    steps:
+      - checkout
+      - run:
+          name: Restore packages
+          command:
+            dotnet restore
+      - run:
+          name: Build App
+          command:
+            dotnet build --configuration Release --runtime ubuntu.18.04-x64
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:LhsEOPxQE8eadV8HuJBPnMfe++DXFe61cl6f7A/6pik"
+      - deploy:
+          name: Deploy to VPS
+          command: |
+            ssh -o "StrictHostKeyChecking no" -t www-deployment@UserR00T.com 'sudo service kestrel-pastr stop' 
+            scp -o "StrictHostKeyChecking no" -r ./Pastr/bin/Release/netcoreapp2.1/ubuntu.18.04-x64/* www-deployment@UserR00T.com:/var/www/pastr.userr00t.com/api/
+            ssh -o "StrictHostKeyChecking no" -t www-deployment@UserR00T.com 'sudo service kestrel-pastr start' 
+            
