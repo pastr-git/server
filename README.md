@@ -44,7 +44,7 @@ This is a dummy response used for testing.
 ### POST {BASE}/paste/
 Creates a new post.
  
-> `{BASE}/paste/dummy`
+> `{BASE}/paste`
 
 Expected status code: `200`  
 Expected Content Type: `application/json; charset=utf-8`  
